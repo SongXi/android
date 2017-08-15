@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by zhaojp on 17-8-14.
+ * Created by LJS on 17-8-14.
  */
 
 public class WaveView extends View {
@@ -52,7 +52,7 @@ public class WaveView extends View {
     mWavePaint.setStyle(Style.FILL);
     // 设置画笔颜色
     mWavePaint.setColor(WAVE_PAINT_COLOR);
-    mDrawFilter = new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
+//    mDrawFilter = new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
   }
 
   @Override
@@ -90,7 +90,7 @@ public class WaveView extends View {
     }
 
     // 引发view重绘，一般可以考虑延迟20-30ms重绘，空出时间片
-    postInvalidate();
+    postInvalidateDelayed(20);
   }
 
   private void resetPositonY() {
@@ -126,5 +126,6 @@ public class WaveView extends View {
     for (int i = 0; i < mTotalWidth; i++) {
       mYPositions[i] = (float) (STRETCH_FACTOR_A * Math.sin(mCycleFactorW * i) + OFFSET_Y);
     }
+
   }
 }

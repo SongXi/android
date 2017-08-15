@@ -8,6 +8,7 @@
 
 <com.song.customview.WaveView
   android:layout_width="match_parent"
+  android:background="#FFF"
   android:layout_alignParentBottom="true"
   android:layout_height="match_parent" />
 </RelativeLayout>
